@@ -1,15 +1,12 @@
-vendor/
-node_modules/
-
-# Laravel 4 specific
-bootstrap/compiled.php
-app/storage/
-
-# Laravel 5 & Lumen specific
-bootstrap/cache/
-storage/
-.env.*.php
-.env.php
+/vendor
+/node_modules
+/public/storage
+.idea/
+Homestead.yaml
+Homestead.json
 .env
-
 _ide_helper.php
+.directory
+
+storage/sources/*
+!storage/sources/.gitkeep
