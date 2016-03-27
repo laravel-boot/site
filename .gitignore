@@ -7,3 +7,6 @@ Homestead.json
 .env
 _ide_helper.php
 .directory
+
+storage/sources/*
+!storage/sources/.gitkeep
