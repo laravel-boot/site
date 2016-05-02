@@ -21,6 +21,7 @@ class AnnotationsServiceProvider extends ServiceProvider {
      */
     protected $scanRoutes = [
         \App\Http\Controllers\ComposeZipController::class,
+        \App\Http\Controllers\SiteController::class,
     ];
 
     /**

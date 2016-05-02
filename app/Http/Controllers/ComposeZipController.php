@@ -35,19 +35,16 @@ class ComposeZipController extends Controller
         $this->zippy = $zippy;
     }
     /**
-     * @Get("/compose/zip")
+     * @Get("/compose/zip", as="compose.zip")
      */
     public function index()
     {
-
         $name = uniqid();
 
         $mapping = $this->mapSource();
         $archive = $this->zippy->create(storage_path('compose/' . $name . '.tar'),$mapping, true);
 
         return response()->download(storage_path('compose/' . $name . '.tar'));
-
-
     }
 
     protected function mapSource($version = '5.2')
