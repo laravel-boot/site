@@ -1,38 +1,39 @@
 'use strict';
 
-var path = require('path');
-var webpack = require('webpack');
-var babel = require('babel-preset-es2015');
-
-var PROD = JSON.parse(process.env.PROD_ENV || '0');
+const webpack = require('webpack');
+const NODE_ENV = process.env.NODE_ENV || 'development';
 
 module.exports = {
-    context: path.resolve('resources'),
-    entry: {
-        app: './assets/js/index.js'
-    },
     module: {
-        loaders: [{
-            test : /\.jsx?/,
-            loader: 'babel-loader',
-            exclude: /(node_modules|bower_components)/,
-            query: {
-                presets: ['es2015', 'react']
-            }
-        },
-            {
-                test: /\.less$/,
-                loader: "style!css!less"
-            }
+        loaders: [
+            {test: /\.js$/, loader: "babel"},
+            { test: /\.css$/, loader: "style!css" },
+            { test: /\.less$/, loader: "style!css!less" },
+            { test: /\.png$/, loader: "url?limit=100000" },
+            { test: /\.jpg$/, loader: "file" }
         ]
     },
-    output: {
-        path: path.resolve('public/js'),
-        filename: "bundle.js"
+    resolve: {
+        modulesDirectories: ['node_modules'],
+        extensions: ['', '.js']
     },
-    plugins: PROD ? [
-        new webpack.optimize.UglifyJsPlugin({
-            compress: false
-        }),
-    ] : []
+    resolveLoader: {
+        modulesDirectories: ['node_modules'],
+        moduleTemplate: ['*-loader', '*'],
+        extensions: ['', '.js']
+    },
+
+
+    watch: NODE_ENV == 'development'
 };
+
+if (NODE_ENV == 'production') {
+    module.exports.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false,
+                drop_console: false
+            }
+        })
+    );
+}
