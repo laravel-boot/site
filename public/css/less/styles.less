@@ -1,0 +1,67 @@
+@import "common";
+
+body {
+    font-size: 16px;
+}
+
+div.wrapper {
+    padding: 0;
+    margin: 0;
+    header {
+        padding: 10px;
+        background-color: @headerBackground;
+        div.header-wrapper {
+            div.text {
+                font-family: source-sans-pro, sans-serif;
+                span {
+                    &.main {
+                        font-size: 3em;
+                        color: @logoColor;
+                        letter-spacing: 0.15em;
+                    }
+                    &.signature {
+                        font-size: 1.2em;
+                        font-weight: bold;
+                        letter-spacing: normal;
+                        color: @logoSignatureColor;
+                    }
+                }
+            }
+        }
+    }
+    section.content {
+        div.form-wrapper {
+            height: inherit;
+            padding: 0 1em;
+            form.boot-form {
+                height: inherit;
+                div.project-format {
+                    margin: 1em 0;
+                    span {
+                        font-weight: bold;
+                        font-size: 1.8em;
+                    }
+                }
+                div.project-data {
+                    span.specifically {
+                        font-size: 0.8em;
+                        color: @specificallyColor;
+                    }
+                }
+                div.action-button {
+                    button.make-button {
+                        color: white;
+                        font-size: 1.2em;
+                        font-weight: bold;
+                        background-color: @buttonMakeColor;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        width: 100%;
+        height: 60px;
+        background-color: @footerColor;
+    }
+}

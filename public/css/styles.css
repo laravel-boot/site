@@ -1,0 +1,58 @@
+@font-face {
+  font-family: source-sans-pro;
+  src: url(fonts/SourceSansProLight.ttf);
+}
+body {
+  font-size: 16px;
+}
+div.wrapper {
+  padding: 0;
+  margin: 0;
+}
+div.wrapper header {
+  padding: 10px;
+  background-color: #ee5f5b;
+}
+div.wrapper header div.header-wrapper div.text {
+  font-family: source-sans-pro, sans-serif;
+}
+div.wrapper header div.header-wrapper div.text span.main {
+  font-size: 3em;
+  color: #FFFFFF;
+  letter-spacing: 0.15em;
+}
+div.wrapper header div.header-wrapper div.text span.signature {
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: normal;
+  color: #fdcfcc;
+}
+div.wrapper section.content div.form-wrapper {
+  height: inherit;
+  padding: 0 1em;
+}
+div.wrapper section.content div.form-wrapper form.boot-form {
+  height: inherit;
+}
+div.wrapper section.content div.form-wrapper form.boot-form div.project-format {
+  margin: 1em 0;
+}
+div.wrapper section.content div.form-wrapper form.boot-form div.project-format span {
+  font-weight: bold;
+  font-size: 1.8em;
+}
+div.wrapper section.content div.form-wrapper form.boot-form div.project-data span.specifically {
+  font-size: 0.8em;
+  color: #ccc;
+}
+div.wrapper section.content div.form-wrapper form.boot-form div.action-button button.make-button {
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: #ee5f5b;
+}
+div.wrapper footer {
+  width: 100%;
+  height: 60px;
+  background-color: #f17e7b;
+}
