@@ -15,7 +15,7 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', 'PageController@index');
 
-    Route::post('generate', 'PageController@generatePost')
-        ->name('generate.post');
+    Route::post('generate', 'GeneratorController@generatePost')
+        ->name('generate.app');
 
 });

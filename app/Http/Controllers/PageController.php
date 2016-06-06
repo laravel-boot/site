@@ -25,6 +25,6 @@ class PageController extends Controller
 
     public function generatePost(GenerateRequest $request)
     {
-
+        dump($request->all()); die();
     }
 }

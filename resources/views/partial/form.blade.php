@@ -1,4 +1,4 @@
-<form class="boot-form" method="post" action="{{route('generate.post')}}">
+<form class="boot-form" method="post" action="{{route('generate.app')}}">
     <div class="form-inline text-center">
         <div class="project-format form-group">
             <span>Choice archive format

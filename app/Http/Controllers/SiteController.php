@@ -10,7 +10,6 @@ use App\Http\Requests;
 /**
  * Class SiteController
  * @package App\Http\Controllers
- * @Middleware("web")
  */
 class SiteController extends Controller
 {
