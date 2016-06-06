@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Collective\Annotations\Routing\Annotations\Annotations\Get;
-use Collective\Annotations\Routing\Annotations\Annotations\Middleware;
-use Collective\Annotations\Routing\Annotations\Annotations\Resource;
 use Illuminate\Http\Request;
 use Alchemy\Zippy\Zippy;
 
@@ -15,7 +12,6 @@ use App\Http\Requests;
 /**
  * Class ComposeZipController
  * @package App\Http\Controllers
- * @Middleware("web")
  */
 class ComposeZipController extends Controller
 {
@@ -34,17 +30,18 @@ class ComposeZipController extends Controller
 
         $this->zippy = $zippy;
     }
-    /**
-     * @Get("/compose/zip", as="compose.zip")
-     */
+    
+   
     public function index()
     {
         $name = uniqid();
+        $path = storage_path('compose/' . $name . '.tar');
 
         $mapping = $this->mapSource();
-        $archive = $this->zippy->create(storage_path('compose/' . $name . '.tar'),$mapping, true);
+        $archive = $this->zippy->create($path,$mapping, true);
 
-        return response()->download(storage_path('compose/' . $name . '.tar'));
+
+        return response()->download($path);
     }
 
     protected function mapSource($version = '5.2')

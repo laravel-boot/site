@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Interfaces\StubInterface;
 use Illuminate\Database\Eloquent\Model;
 
 class ServiceProviderStub extends Model implements StubInterface

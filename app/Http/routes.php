@@ -14,6 +14,7 @@
 Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', 'PageController@index');
+    Route::get('compose/zip', 'ComposeZipController@index')->name('compose.zip');
 
     Route::post('generate', 'GeneratorController@generatePost')
         ->name('generate.app');

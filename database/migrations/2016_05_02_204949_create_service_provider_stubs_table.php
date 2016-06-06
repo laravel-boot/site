@@ -12,8 +12,9 @@ class CreateServiceProviderStubsTable extends Migration
      */
     public function up()
     {
-        Schema::create('service_provider_stubs', function (Blueprint $table) {
+        Schema::create('stubs', function (Blueprint $table) {
 
+            $table->increments('id');
             $table->string('name')->index();
             $table->string('title')->nullable();
 
